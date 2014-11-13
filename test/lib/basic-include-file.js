@@ -2,12 +2,9 @@ var vars = require('./basic-variables');
 
 module.exports =
 {
-  rules:
+  'span':
   {
-    'span':
-    {
-      'color': vars.themeColor,
-      'background-color': '#000'
-    }
+    'color': vars.themeColor,
+    'background-color': '#000'
   }
 };

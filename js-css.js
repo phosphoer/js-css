@@ -39,4 +39,24 @@ api.toCSS = function(ruleObj)
   return outputText;
 };
 
+//
+// Handle being called from commandline
+//
+if (require.main === module)
+{
+  var args = require('minimist')(process.argv.slice(2));
+  var fs = require('fs');
+  var path = require('path');
+
+  // Build every jscss module listed
+  for (var i = 0; args._ && i < args._.length; ++i)
+  {
+    var fileName = path.join(process.cwd(), args._[i]);
+    var mod = require(fileName);
+    var css = api.build(mod);
+    var destFileName = path.basename(fileName, '.js') + '.css';
+    fs.writeFileSync(destFileName, css);
+  }
+}
+
 module.exports = api;
