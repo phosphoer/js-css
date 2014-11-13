@@ -1,0 +1,15 @@
+{
+  "name": "js-css",
+  "version": "0.0.1",
+  "description": "Write CSS using JS!",
+  "main": "js-css.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "author": "David Evans",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "chai": "^1.10.0"
+  }
+}
